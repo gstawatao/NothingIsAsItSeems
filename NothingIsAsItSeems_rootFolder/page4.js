@@ -1,4 +1,3 @@
-let words = document.getElementById('words')
 
 function setup() {
     // make the div called "mySketch" a p5.js canvas element
@@ -22,7 +21,8 @@ function setup() {
     let green = createImg ("images/green.png");
     green.id("green");
     green.size(200, 200);
-    green.position(700, 500)
+    green.position(700, 500);
+    
 
     blue.mousePressed(blueBackground);
     red.mousePressed(redBackground);
