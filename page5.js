@@ -20,7 +20,7 @@ function draw() {
   ypos = mouseY;
 
 
-  if ((xpos > 1350 && xpos < 1450) && (ypos > 150 && ypos < 450)){
+  if ((xpos > 1375 && xpos < 1425) && (ypos > 200 && ypos < 400)){
 
     window.location.href = "page7.html";
   }
