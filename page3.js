@@ -1,58 +1,45 @@
 let x = 0;
 let y = 0;
-let xpos;
-let ypos;
-
+let xpos = 2200;
+let ypos = 970;
 
 
 function setup() {
-    // make the div called "mySketch" a p5.js canvas element
-    let cnv = createCanvas(windowWidth, windowHeight);
-    cnv.parent('mySketch');
+  // make the div called "mySketch" a p5.js canvas element
+  let cnv = createCanvas(windowWidth, windowHeight);
+  cnv.parent('mySketch');
 
+}
+
+function draw() {
+  displayClue();
+
+  if (xpos < -1500){
+    window.location.href = "page6.html";
   }
-  
-  function draw() {
+}
 
-    removeElements();
+function windowResized() {
+  // resize the canvas when the screen is resized.
+  resizeCanvas(windowWidth, windowHeight);
+}
 
-    let clue = createImg("images/clue.png");
-     clue.id('clue');
-     clue.position (1440, 400)
+function displayClue() {
+  removeElements();
 
-    //set the position
-    //create arithmatic for x and y position. this lets us read out the position
-    xpos = width/2-200+x;
-    ypos = 1200;
+  // create an image element in html
+  let clue = createImg("images/clue.png");
+  // give it an id
+  clue.id('clue');
 
-  
-    //position the cat based on the arrow keys
-    clue.position(xpos, ypos);
+  // position the image
+  clue.position(xpos, ypos);
 
-
-//controls using arrow keys
-    if (keyIsPressed){
-      
-      if(keyCode == RIGHT_ARROW) {
-
-        //plus 5 in the x direction means right
-        x+=5;
-      }
-
-      if(keyCode == DOWN_ARROW) {
-
-        //plus 5 in the y direction means down
-        y+=5;
-      }
-
-
-      if (xpos<100)
-        window.location.href = "page4.html";
-      }
-
-      }
-  
-  function windowResized() {
-    // resize the canvas when the screen is resized.
-    resizeCanvas(windowWidth, windowHeight);
+  // controls using arrow keys
+  if (keyIsPressed) {
+    if (keyCode == LEFT_ARROW) {
+      // plus 5 in the x direction means right
+      xpos -= 10;
+    }
+  }
 }

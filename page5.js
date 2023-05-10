@@ -1,28 +1,37 @@
+let xpos = 0;
+let ypos = 0;
+
 function setup() {
-    // make the div called "mySketch" a p5.js canvas element
-    let cnv = createCanvas(windowWidth, windowHeight);
-    cnv.parent('mySketch');
+  let cnv = createCanvas(windowWidth, windowHeight);
+  cnv.parent('mySketch');
 
-    E = createImg('images/E.png');
-    E.position(2300, 1200);
-    E.class('dragme');
+  G = createImg('images/G.png');
+  G.class('dragme');
 
-    I = createImg('images/I.png');
-    I.position(200, 1000);
-    I.class('dragme');
+ 
+  xpos = width/2-100;
+  ypos = height/2-100;
 
-    G = createImg('images/G.png');
-    G.position(2500, 1000);
-    G.class('dragme');
-
-  }
-  
-  function draw() {
-
-  }
-
-  
-  function windowResized() {
-    // resize the canvas when the screen is resized.
-    resizeCanvas(windowWidth, windowHeight);
+  G.position(xpos, ypos);
 }
+
+function draw() {
+  xpos = mouseX;
+  ypos = mouseY;
+
+
+  if ((xpos > 1350 && xpos < 1450) && (ypos > 150 && ypos < 450)){
+
+    window.location.href = "page7.html";
+  }
+}
+
+function windowResized() {
+  // resize the canvas when the screen is resized.
+  resizeCanvas(windowWidth, windowHeight);
+}
+
+
+
+
+

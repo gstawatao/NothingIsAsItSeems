@@ -1,11 +1,11 @@
 const sketch = document.getElementById("mySketch");
 
 sketch.addEventListener("mousedown", function(event) {
-  sketch.style.backgroundColor = "blue";
+    sketch.style.backgroundColor = "white";
 });
 
 sketch.addEventListener("mouseup", function(event) {
-  sketch.style.backgroundColor = "white";
+    sketch.style.backgroundColor = "black";
 });
 
 function windowResized() {
